@@ -65,11 +65,15 @@ class Book(models.Model):
     ordering = ['title']
 
   def display_genre(self):
-    """
-    Creates a string for the Genre. This is required to display genre in Admin.
-    """
+    """Note: Getting the genre may not be a good idea here, because
+      of the "cost" of the database operation. We're showing you how because
+      calling functions in your models can be very useful for other reasons —
+      for example to add a Delete link next to every item in the list."""
+
+    """Creates a string for the Genre. This is required to display genre in Admin."""
     return ', '.join([genre.name for genre in self.genre.all()[:3]])
-    display_genre.short_description = 'Genre'
+
+  display_genre.short_description = 'Genre'
 
   def get_absolute_url(self):
     """

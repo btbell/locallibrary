@@ -8,24 +8,38 @@ from .models import Author, Book, BookInstance, Genre
 # admin.site.register(models.BookInstance)
 # admin.site.register(models.Genre)
 
-# define the Author admin class
+"""define the Author admin class"""
 class AuthorAdmin(admin.ModelAdmin):
-  pass
+  list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death')
+  """set the dates on one line in admin panel"""
+  fields = ['first_name', 'last_name', ('date_of_birth', 'date_of_death')]
 
-# register admin class with the associated model
+"""register admin class with the associated model"""
 admin.site.register(Author, AuthorAdmin)
 
-# Register the Admin classes for Book using the decorator
-# @register decorator to register the models (this does exactly the same thing as the admin.site.register() syntax):
+"""Register the Admin classes for Book using the decorator"""
+"""@register decorator to register the models (this does exactly the same thing as the admin.site.register() syntax):"""
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-  pass
+  list_display = ('title', 'author', 'display_genre')
 
-# Register the Admin classes for BookInstance using the decorator
-# setting a class with 'pass' leaves admin behavior unchanged
+"""Register the Admin classes for BookInstance using the decorator"""
+"""setting a class with 'pass' leaves admin behavior unchanged"""
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
-  pass
+  list_display = ('book', 'status', 'due_back')
+  list_filter = ('status', 'due_back')
+  # section admin detail view
+  fieldsets = (
+    (None, {
+      'fields': ('book', 'imprint', 'id')
+    }),
+    ('Availability', {
+      'fields': ('status', 'due_back')
+    }),
+  )
+
+
 
 # Register the Admin classes for Genre using the decorator
 @admin.register(Genre)
