@@ -61,6 +61,9 @@ class Book(models.Model):
   # Genre class has already been defined so we can specify the object above.
   #language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
+  class Meta:
+    ordering = ['title']
+
   def display_genre(self):
     """
     Creates a string for the Genre. This is required to display genre in Admin.
