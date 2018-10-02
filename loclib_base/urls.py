@@ -21,5 +21,5 @@ from django.views.generic import RedirectView
 # adding URL map to redirec the base URL to the app
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('catalog.urls')),
+    path('catalog/', include('catalog.urls')),
 ]
