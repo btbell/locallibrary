@@ -56,7 +56,7 @@ ROOT_URLCONF = 'loclib_base.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/opt/myprojects/loclib_base/catalog/templates/catalog'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

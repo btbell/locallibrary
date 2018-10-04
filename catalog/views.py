@@ -13,7 +13,7 @@ def hello(request):
   return HttpResponse(html)
 
 def index(request):
-  # generate counts of some main objects
+  # FBV - generate counts of some main objects
   num_books = Book.objects.all().count()
   num_instances = BookInstance.objects.all().count()
 
