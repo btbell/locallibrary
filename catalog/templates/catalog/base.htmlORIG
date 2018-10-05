@@ -14,29 +14,17 @@
     {% endblock %}
   </head>
   <body>
-    <!-- |*|*|*|*| WRAPPER |*|*|*|*| -->
-    <div class="container-fluid">
-    <div class="row">
-      <!-- |*|*|*|*| SIDEBAR |*|*|*|*| -->
-      <div class="col-sm-2">
-      {% block sidebar %}
-        <ul class="sidebar-nav">
-          <li><a href="{% url 'index' %}">Home</a></li>
-          <li><a href="">All books</a></li>
-          <li><a href="">All authors</a></li>
-        </ul>
-     {% endblock %}
-      </div>
-      <!-- |*|*|*|*| CONTENT |*|*|*|*| -->
-      <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
-    </div>
+  <!-- |*|*|*|*| Content |*|*|*|*| -->
+  <div class="container-fluid">
+    {% block sidebar %}<!-- insert default navigation text for every page -->{% endblock %}
+    {% block content %}<!-- default content text (typically empty) -->{% endblock %}
   </div>
+
+  <!-- |*|*|*|*| Footer |*|*|*|*| -->
   <footer class="basic-footer">
       <p> stuBB 2018</p>
       <p>Copyrighted by <a href="https://creativecommons.org/licenses/by/3.0/">CC</a></p>
   </footer>
-
-
   </body>
   <!-- JS, Popper, JQuery -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
