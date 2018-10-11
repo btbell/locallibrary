@@ -1,1 +1,12 @@
 /* CSS Document */
+
+.sidebar-nav {
+    margin-top: 3em;
+    list-style: none;
+    margin-left: -1.5em;
+}
+
+.content {
+    margin-top: 3em;
+    border-left: 1px solid #ccc;
+}
