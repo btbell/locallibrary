@@ -38,3 +38,6 @@ class BookListView(generic.ListView):
   model = Book
   # queryset = Book.objects.all()
   template_name = 'catalog/book_list.html'
+
+class BookDetailView(generic.DetailView):
+  model = Book
