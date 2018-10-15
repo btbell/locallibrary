@@ -61,6 +61,21 @@ class Book(models.Model):
   # Genre class has already been defined so we can specify the object above.
   #language = models.ForeignKey('Language', on_delete=models.SET_NULL, null=True)
 
+  # METADATA
+  # includes all Dublin Core elements except title, author, description(summary), identifier(isbn)
+
+  subject = models.CharField(max_length=100, null=True, blank=True)
+  publisher = models.CharField(max_length=250, null=True, blank=True)
+  contributor = models.CharField(max_length=200, null=True, blank=True, help_text="An entity responsible for making contributions to the content of the resource.")
+  date = models.DateField(null=True, blank=True,)
+  type = models.CharField(max_length=60, null=True, blank=True, help_text="Genre")
+  format = models.CharField(max_length=60, null=True, blank=True, help_text="Format may include the media-type or dimensions of the resource.")
+  source = models.CharField(max_length=60, null=True, blank=True)
+  language = models.CharField(max_length=60, null=True, blank=True)
+  relation = models.CharField(max_length=60, null=True, blank=True, help_text="A reference to a related resource.")
+  coverage = models.CharField(max_length=250, null=True, blank=True, help_text="Coverage will typically include spatial location (a place name or geographic coordinates), temporal period (a period label, date, or date range) or jurisdiction (such as a named administrative entity).")
+  rights = models.CharField(max_length=250, null=True, blank=True, help_text="A Rights element will contain a rights management statement for the resource, or reference a service providing such information.")
+
   class Meta:
     ordering = ['title']
 

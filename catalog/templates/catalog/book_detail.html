@@ -1,23 +1,23 @@
 {% extends 'catalog/base.html' %}
 
 <!-- |*|*|*|*| DUBLIN CORE META ELEMENTS |*|*|*|*| -->
+<!-- Version: 1.1 - Registration Authority: Dublin Core Metadata Initiative -->
 {% block extra_head_tags %}
     <meta name="dc.title" CONTENT="{{ book.title }}">
     <meta name="dc.creator" CONTENT="{{ book.author }}">
     <meta name="dc.subject" CONTENT="">
-    <meta name="dc.description" CONTENT="">
+    <meta name="dc.description" CONTENT="{{ book.summary }}">
     <meta name="dc.publisher" CONTENT="">
     <meta name="dc.contributor" CONTENT="">
     <meta name="dc.date" CONTENT="">
-    <meta name="dc.type" CONTENT="">
+    <meta name="dc.type" CONTENT="{{ book.genre }}">
     <meta name="dc.format" CONTENT="">
-    <meta name="dc.identifier" CONTENT="">
+    <meta name="dc.identifier" CONTENT="{{ book.isbn }}">
     <meta name="dc.source" CONTENT="">
     <meta name="dc.language" CONTENT="">
     <meta name="dc.relation" CONTENT="">
     <meta name="dc.coverage" CONTENT="">
     <meta name="dc.rights" CONTENT="">
-
 {% endblock %}
 
 {% block title %}Index{% endblock %}
