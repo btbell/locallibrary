@@ -1,8 +1,26 @@
 {% extends 'catalog/base.html' %}
 
+<!-- |*|*|*|*| DUBLIN CORE META ELEMENTS |*|*|*|*| -->
+{% block extra_head_tags %}
+    <meta name="dc.title" CONTENT="{{ book.title }}">
+    <meta name="dc.creator" CONTENT="{{ book.author }}">
+    <meta name="dc.subject" CONTENT="">
+    <meta name="dc.description" CONTENT="">
+    <meta name="dc.publisher" CONTENT="">
+    <meta name="dc.contributor" CONTENT="">
+    <meta name="dc.date" CONTENT="">
+    <meta name="dc.type" CONTENT="">
+    <meta name="dc.format" CONTENT="">
+    <meta name="dc.identifier" CONTENT="">
+    <meta name="dc.source" CONTENT="">
+    <meta name="dc.language" CONTENT="">
+    <meta name="dc.relation" CONTENT="">
+    <meta name="dc.coverage" CONTENT="">
+    <meta name="dc.rights" CONTENT="">
+
+{% endblock %}
+
 {% block title %}Index{% endblock %}
-
-
 
 {% block content %}
 
