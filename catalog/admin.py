@@ -22,6 +22,15 @@ admin.site.register(Author, AuthorAdmin)
 @admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
   list_display = ('title', 'author', 'display_genre')
+  fieldsets = (
+    ('REQUIRED', {
+      'fields': ('title', 'author', 'summary', 'isbn', 'genre', )
+    }),
+    ('OPTIONAL: Dublin Core Metadata Elements - this standard DC set includes the Title, and Author from the Required section', {
+      'fields': ('subject', 'publisher', 'contributor', 'date', 'type', 'format', 'source', 'language', 'relation', 'coverage', 'rights',)
+    }),
+  )
+
 
 """Register the Admin classes for BookInstance using the decorator"""
 """setting a class with 'pass' leaves admin behavior unchanged"""

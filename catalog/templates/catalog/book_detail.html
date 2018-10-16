@@ -5,16 +5,16 @@
 {% block extra_head_tags %}
     <meta name="dc.title" CONTENT="{{ book.title }}">
     <meta name="dc.creator" CONTENT="{{ book.author }}">
-    <meta name="dc.subject" CONTENT="">
+    <meta name="dc.subject" CONTENT="{{ book.subject }}">
     <meta name="dc.description" CONTENT="{{ book.summary }}">
-    <meta name="dc.publisher" CONTENT="">
+    <meta name="dc.publisher" CONTENT="{{ book.publisher }}">
     <meta name="dc.contributor" CONTENT="">
     <meta name="dc.date" CONTENT="">
     <meta name="dc.type" CONTENT="{{ book.genre }}">
-    <meta name="dc.format" CONTENT="">
+    <meta name="dc.format" CONTENT="{{ book.format }}">
     <meta name="dc.identifier" CONTENT="{{ book.isbn }}">
     <meta name="dc.source" CONTENT="">
-    <meta name="dc.language" CONTENT="">
+    <meta name="dc.language" CONTENT="{{ book.language}}">
     <meta name="dc.relation" CONTENT="">
     <meta name="dc.coverage" CONTENT="">
     <meta name="dc.rights" CONTENT="">
