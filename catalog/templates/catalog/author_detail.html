@@ -1,0 +1,25 @@
+{% extends 'catalog/base.html' %}
+
+<!-- |*|*|*|*| DUBLIN CORE META ELEMENTS |*|*|*|*| -->
+<!-- Version: 1.1 - Registration Authority: Dublin Core Metadata Initiative -->
+{% block extra_head_tags %}
+
+{% endblock %}
+
+{% block title %}Author Detail{% endblock %}
+
+{% block content %}
+
+  <h1>{{ author.last_name }}, {{ author.first_name}}</h1>
+
+  <p><strong>Birth:</strong> {{ author.date_of_birth}}</p>
+  <p><strong>Death:</strong> {{ author.date_of_death }}</p>
+
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Books by author</h4>
+
+
+  </div>
+
+{% endblock %}

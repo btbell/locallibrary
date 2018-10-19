@@ -34,6 +34,7 @@ def index(request):
   # render the HTML template index.html with the data in the context variable
   return render(request, 'index.html', context=context)
 
+# generic class views
 class BookListView(generic.ListView):
   model = Book
   # queryset = Book.objects.all()
@@ -42,3 +43,11 @@ class BookListView(generic.ListView):
 
 class BookDetailView(generic.DetailView):
   model = Book
+
+class AuthorListView(generic.ListView):
+  model = Author
+  template_name = 'catalog/author_list.html'
+  paginate_by = 10
+
+class AuthorDetailView(generic.DetailView):
+  model = Author
