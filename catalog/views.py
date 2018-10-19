@@ -38,6 +38,7 @@ class BookListView(generic.ListView):
   model = Book
   # queryset = Book.objects.all()
   template_name = 'catalog/book_list.html'
+  paginate_by = 10
 
 class BookDetailView(generic.DetailView):
   model = Book
