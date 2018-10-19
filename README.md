@@ -22,3 +22,21 @@ catalog/book/<id> — The detail view for a particular book, with a field primar
 (the default). For example, the URL for the third book added to the list will be /catalog/book/3.
 catalog/author/<id> — The detail view for the specific author with a primary key field of <id>.  For example, 
 the URL for the 11th author added to the list will be  /catalog/author/11.
+
+I added the Dublin Core Metadata Element Set - DCMI to the Book Details page. This data is added to
+<meta> tags in the head section of the book detail template.
+DC.TITLE
+DC.CREATOR
+DC.SUBJECT
+DC.DESCRIPTION
+DC.PUBLISHER
+DC.CONTRIBUTORS
+DC.DATE
+DC.TYPE
+DC.FORMAT
+DC.IDENTIFIER
+DC.SOURCE
+DC.LANGUAGE
+DC.RELATION
+DC.COVERAGE
+DC.RIGHTS
