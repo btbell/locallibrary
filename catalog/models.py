@@ -154,6 +154,23 @@ class Author(models.Model):
   last_name = models.CharField(max_length=100)
   date_of_birth = models.DateField(null=True, blank=True)
   date_of_death = models.DateField('died', null=True, blank=True)
+  born_in = models.CharField(max_length=200, null=True, blank=True)
+  education = models.CharField(max_length=200, null=True, blank=True)
+
+  COMMON_BOOK_AWARDS = (
+    ('booker', 'Booker Award'),
+    ('caldecott', 'Caldecott Medal'),
+    ('nba', 'National Book Award'),
+    ('nbcca', 'National Book Critics Circle Award'),
+    ('newbery', 'Newbery Medal'),
+    ('npl', 'Nobel Prize for Literature'),
+    ('p/f', 'PEN/Faulkner Award'),
+    ('pp', 'Pulitzer Prize'),
+    ('cwp', "Commonwealth Writers' Prize"),
+    ('emma', 'EMMA Awards')
+  )
+
+  awards = models.CharField(max_length=10, choices=COMMON_BOOK_AWARDS, null=True, blank=True)
 
   class Meta:
     ordering = ["last_name", "first_name"]
