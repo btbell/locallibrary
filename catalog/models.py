@@ -50,6 +50,7 @@ class Book(models.Model):
   Model representing a book (but not a specific copy of a book).
   """
   title = models.CharField(max_length=200)
+  #category
   author = models.ForeignKey('Author', on_delete=models.SET_NULL, null=True)
   # Foreign Key used because book can only have one author, but authors can have multiple books
   # Author as a string rather than object because it hasn't been declared yet in file.
@@ -150,6 +151,7 @@ class Author(models.Model):
   """
   Model representing an author.
   """
+  #name
   first_name = models.CharField(max_length=100)
   last_name = models.CharField(max_length=100)
   date_of_birth = models.DateField(null=True, blank=True)

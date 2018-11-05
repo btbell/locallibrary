@@ -10,7 +10,7 @@
 
 {% block content %}
 
-  <h1>{{ author.last_name }}, {{ author.first_name}}</h1>
+  <h1>Author: {{ author.last_name }}, {{ author.first_name}}</h1>
 
   <p><strong>Birth:</strong> {{ author.date_of_birth}}</p>
   <p><strong>Death:</strong> {{ author.date_of_death }}</p>
@@ -19,8 +19,12 @@
   <p><strong>Awards:</strong> {{ author.awards }}</p>
 
 
+
   <div>
-    <h4>Books by author</h4>
+    <h4>Books</h4>
+      <p> {{ author.pk }}</p>
+      <a href="{% url 'book-detail' author.pk %}">{{ author.book.title }}</a>
+      <hr>
 
 
   </div>
