@@ -1,5 +1,4 @@
 left off here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views -- Challenge yourself
 
     - add books by author on author details page
-    - make author award CHOICES multi select
     - add 'rich snippet' data -> models

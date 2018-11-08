@@ -51,3 +51,8 @@ class AuthorListView(generic.ListView):
 
 class AuthorDetailView(generic.DetailView):
   model = Author
+
+  def get_context_data(self, **kwargs):
+    author_bk_list = super().get_context_data(**kwargs)
+    author_bk_list['book_list'] = Book.objects.filter(author_id=" ")
+    return author_bk_list

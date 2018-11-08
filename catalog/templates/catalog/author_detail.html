@@ -18,14 +18,14 @@
   <p><strong>Education:</strong> {{ author.education }}</p>
   <p><strong>Awards:</strong> {{ author.awards }}</p>
 
-
-
   <div>
     <h4>Books</h4>
-      <p> {{ author.pk }}</p>
-      <a href="{% url 'book-detail' author.pk %}">{{ author.book.title }}</a>
+      <p> {{ author.first_name }}{{ author.book.title }}</p>
+      <a href="{{ book.author.get_absolute_url }}">{{ author.first_name.book.title }}{{ author.book.title }}</a>
       <hr>
-
+{% for book in book_list %}
+            <li><a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{ book.author }}) </li>
+        {% endfor %}
 
   </div>
 
