@@ -26,7 +26,7 @@
 
   <h1>Title: {{ book.title }}</h1>
   <!-- NOTE: foreign key 'author' is the relation. you have to path both tables! -->
-  <p><strong>Author:</strong> <a href="{{ book.author.get_absolute_url }}">{{ book.author.last_name }}, {{ book.author.first_name }}</a>
+  <p><strong>Author:</strong> <a href="{% url 'author-detail' book.author.pk %}">{{ book.author }}</a>
   <p><strong>Summary:</strong> {{ book.summary }}</p>
   <p><strong>ISBN:</strong> {{ book.isbn }}</p>
   <p><strong>Language:</strong> {{ book.language }}</p>
