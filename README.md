@@ -40,3 +40,7 @@ DC.LANGUAGE
 DC.RELATION
 DC.COVERAGE
 DC.RIGHTS
+
+Additions:
+- session-based visit-counter - basic example of using the session framework, allowing you to store
+and retrieve arbitrary data on a per-site-visitor basis. 
