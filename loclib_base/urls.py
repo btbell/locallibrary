@@ -18,7 +18,7 @@ from django.conf.urls import include
 from django.urls import path
 from django.views.generic import RedirectView
 
-# adding URL map to redirec the base URL to the app
+# adding URL map to redirect the base URL to the app
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('catalog/', include('catalog.urls')),
