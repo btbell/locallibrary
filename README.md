@@ -45,4 +45,6 @@ Additions:
 - session-based visit-counter - basic example of using the session framework, allowing you to store
 and retrieve arbitrary data on a per-site-visitor basis. 
 
-- user authentication - login/out pages(using the Django 'canned' auth views and forms), user and staff specific pages
+- user authentication - login/out pages(using the Django 'canned' auth views and forms), user and 
+staff specific pages. Per the tutorial, we're going to place this component outside of the app so
+it can be reused with other applications. DRY!
