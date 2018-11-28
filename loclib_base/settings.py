@@ -123,3 +123,7 @@ STATIC_URL = '/static/'
 
 # Redirect to home url after login
 LOGIN_REDIRECT_URL = "/catalog/"
+
+# Allow password reset email testing locally
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/tmp'
