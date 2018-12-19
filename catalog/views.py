@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 import datetime
 
 from .models import Book, Author, BookInstance, Genre
@@ -13,6 +15,7 @@ def hello(request):
   html = "<html><body>TEST PAGE... Howdy! It is %s.</body></html>" % now
   return HttpResponse(html)
 
+@login_required
 def index(request):
   # FBV - generate counts of some main objects
   num_books = Book.objects.all().count()
@@ -40,22 +43,23 @@ def index(request):
   return render(request, 'index.html', context=context)
 
 # generic class views
-class BookListView(generic.ListView):
+class BookListView(LoginRequiredMixin, generic.ListView):
   model = Book
   # queryset = Book.objects.all()
   template_name = 'catalog/book_list.html'
   paginate_by = 10
 
-class BookDetailView(generic.DetailView):
+class BookDetailView(LoginRequiredMixin, generic.DetailView):
   model = Book
 
-class AuthorListView(generic.ListView):
+class AuthorListView(LoginRequiredMixin, generic.ListView):
   model = Author
   template_name = 'catalog/author_list.html'
   paginate_by = 10
 
-class AuthorDetailView(generic.DetailView):
+class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
   model = Author
+
 
   #def get_context_data(self, **kwargs):
     #author_bk_list = super().get_context_data(**kwargs)

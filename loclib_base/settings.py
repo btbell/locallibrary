@@ -121,6 +121,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# when clicking nav link, if not logged in, users go here
+LOGIN_URL = "/catalog/accounts/login"
 # Redirect to home url after login
 LOGIN_REDIRECT_URL = "/catalog/"
 
