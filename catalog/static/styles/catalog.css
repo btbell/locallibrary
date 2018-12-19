@@ -10,6 +10,12 @@
     margin-top: 3em;
     border-left: 1px solid #ccc;
 }
+.current-user {
+    background-color: #077bff;
+    color: #fff;
+    font-weight: bold;
+    padding-left: .2em;
+}
 footer {
     padding-left: 1em;
 }
