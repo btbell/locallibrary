@@ -4,5 +4,5 @@ left off here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
     - add books by author on author details page
     - add 'rich snippet' data -> models
 
-    left off here: create a view of the books that the current user has borrowed -
-    https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
+    left off here: granting perms for users
+https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Permissions
