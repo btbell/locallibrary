@@ -11,8 +11,8 @@
     border-left: 1px solid #ccc;
 }
 .current-user {
-    background-color: #077bff;
-    color: #fff;
+    border: 2px solid #077bff;
+    color: #077bff;
     font-weight: bold;
     padding-left: .2em;
 }

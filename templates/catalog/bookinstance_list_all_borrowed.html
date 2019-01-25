@@ -1,9 +1,10 @@
 {% extends "catalog/base.html" %}
 
 {% block content %}
-    <h1>Borrowed Books</h1>
+    <h1>All Borrowed Books</h1>
 
-    {% if bookinstance_list %}
+{% if perms.catalog.can_change_book_instance %}
+    <!--{% if bookinstance_list %}-->
     <ul>
 
       {% for bookinst in bookinstance_list %}
@@ -16,4 +17,5 @@
     {% else %}
       <p>There are no books borrowed.</p>
     {% endif %}
+<!--{% endif %}-->
 {% endblock %}

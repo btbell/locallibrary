@@ -4,5 +4,7 @@ left off here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django
     - add books by author on author details page
     - add 'rich snippet' data -> models
 
-    left off here: granting perms for users
+    left off here: Challenge yourself
 https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication#Permissions
+        - As is, i can login as me or pippa, and access borrowed, but it appears it's still working off of
+        'logged_in' and not based on perms. Will need to keep working this at some point.

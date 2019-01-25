@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 import datetime
 
 from .models import Book, Author, BookInstance, Genre
@@ -24,6 +24,9 @@ def index(request):
   # available books
   num_instance_available = BookInstance.objects.filter(status__exact='a').count()
 
+  # borrowed books
+  num_instance_borrowed = BookInstance.objects.filter(status__exact='o').count()
+
   # the 'all()' is implied by default
   num_authors = Author.objects.count()
 
@@ -34,7 +37,8 @@ def index(request):
   context = {
     'num_books': num_books,
     'num_instances': num_instances,
-    'num_instances_available': num_instance_available,
+    'num_instance_available': num_instance_available,
+    'num_instance_borrowed': num_instance_borrowed,
     'num_authors': num_authors,
     'num_visits' : num_visits,
   }
@@ -69,7 +73,15 @@ class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
   def get_queryset(self):
     return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
 
+class BorrowedBooksLibrarianListView(PermissionRequiredMixin, generic.ListView):
+  """ Generic class-based view listing all books on loan AND only viewable by librarians. """
+  model = BookInstance
+  template_name = 'catalog/bookinstance_list_all_borrowed.html'
+  paginate_by = 10
+  permission_required = 'catalog.can_change_book_instance'
 
+  def get_queryset(self):
+    return BookInstance.objects.filter(status__exact='o').order_by('due_back')
   #def get_context_data(self, **kwargs):
     #author_bk_list = super().get_context_data(**kwargs)
     #author_bk_list['book_list'] = Book.objects.filter(author_id=" ")
