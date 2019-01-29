@@ -1,0 +1,14 @@
+{% extends 'catalog/base.html' %}
+
+{% block title %}Author List{% endblock %}
+
+{% block content %}
+
+<h2>Books</h2>
+    <ul>
+        {% for books in object_list %}
+            <li></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

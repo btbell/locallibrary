@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views import generic
 from django.contrib.auth.decorators import login_required
@@ -62,7 +62,26 @@ class AuthorListView(LoginRequiredMixin, generic.ListView):
   paginate_by = 10
 
 class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
-  model = Author
+  #model = Author
+
+  context_object_name = 'author'
+  queryset = Author.objects.all()
+
+  def get_context_data(self, **kwargs):
+    # call the base implementation first to get a context
+    context = super().get_context_data(**kwargs)
+    # add Queryset of All books
+    context['book_list'] = Book.objects.filter(author=2)
+    return context
+
+"""class AuthorBookListView(LoginRequiredMixin, generic.ListView):
+  template_name = 'catalog/author_book_list.html'
+
+  def get_queryset(self):
+    self.author.id = get_object_or_404(Author, name=self.kwargs['pk'])
+    return Book.objects.filter(author=self.author.id)"""
+
+
 
 class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
   """ Generic class-based view listing books on loan to current user. """
