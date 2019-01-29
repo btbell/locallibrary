@@ -71,7 +71,7 @@ class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
     # call the base implementation first to get a context
     context = super().get_context_data(**kwargs)
     # add Queryset of All books
-    context['book_list'] = Book.objects.filter(author=2)
+    context['book_list'] = Book.objects.filter(author=4)
     return context
 
 """class AuthorBookListView(LoginRequiredMixin, generic.ListView):
