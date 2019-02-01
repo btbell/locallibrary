@@ -18,7 +18,7 @@
   <p><strong>Education:</strong> {{ author.education }}</p>
   <p><strong>Awards:</strong> {{ author.awards }}</p>
  <p>{{ author.pk }}</p>
-{% for book in book_list %}
+{% for book in book_list.all %}
             <p>{{ book.title }}</p>
         {% endfor %}
     <!--{{ book.title }}{{ author.pk }}-->
