@@ -30,6 +30,9 @@
           <li class="current-user">User: {{ user.get_username }}</li>
           <li><a href="{% url 'my-borrowed' %}">My Borrowed</a> </li>
           <li><a href="{% url 'logout'%}">Logout</a></li>
+          <br><br>
+          <li>Staff</li>
+          <li><a href="{% url 'all-borrowed' %}">All borrowed</a> </li>
         {% else %}
           <li><a href="{% url 'login'%}">Login</a></li>
         {% endif %}
