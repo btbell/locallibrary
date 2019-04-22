@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import generic
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 import datetime
 
-from .models import Book, Author, BookInstance, Genre
+from .models import Book, Author, BookInstance
 from catalog.forms import RenewBookForm
 
 # Create your views here.
@@ -139,3 +140,17 @@ def renew_book_librarian(request, pk):
     }
 
     return render(request, 'catalog/book_renew_librarian.html', context)
+
+class AuthorCreate(CreateView):
+  model = Author
+  fields = '__all__'
+  # the initial is just an example that you can have a default value set
+  #initial = {'date_of_death': '05/23/1947'}
+
+class AuthorUpdate(UpdateView):
+  model = Author
+  fields = ['first_name', 'last_name', 'date_of_birth', 'date_of_death', 'born_in', 'education', 'awards']
+
+class AuthorDelete(DeleteView):
+  model = Author
+  success_url = reverse_lazy('authors')
