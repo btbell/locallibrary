@@ -9,4 +9,9 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
         the correct author id. nowhere can i find decent examples of trying to get the backward
         relationship working. all examples are either looking for author name OR the examples show a
         fixed value.
-     left off here: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views -- Challenge yourself
+     https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views -- Challenge yourself
+
+
+    - left off here - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
+
+    ModelForms
