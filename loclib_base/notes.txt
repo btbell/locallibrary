@@ -14,4 +14,4 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
     - left off here - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
-    ModelForms
+    Challenge yourself - create the same CRUD forms for Books.
