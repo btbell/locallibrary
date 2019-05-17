@@ -4,6 +4,8 @@ from . import views
 
 urlpatterns = [
   path('hello/', views.hello, name='hello'),
+  path('form_test/', views.form_test, name='form_test'),
+  path('form_test_colorful/', views.form_test_colorful, name='form_test_colorful'),
   path('', views.index, name='index'),
   path('author/create/', views.AuthorCreate.as_view(), name='author_create'),
   path('author/<int:pk>/update/', views.AuthorUpdate.as_view(), name='author_update'),

@@ -156,7 +156,7 @@ class Author(models.Model):
   #name
   first_name = models.CharField(max_length=100)
   last_name = models.CharField(max_length=100)
-  date_of_birth = models.DateField(null=True, blank=True)
+  date_of_birth = models.DateField(null=True, blank=True, verbose_name='Birthdate (yyyy-mm-dd)' )
   date_of_death = models.DateField('died', null=True, blank=True)
   born_in = models.CharField(max_length=200, null=True, blank=True)
   education = models.CharField(max_length=200, null=True, blank=True)

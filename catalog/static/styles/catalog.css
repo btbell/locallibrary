@@ -19,3 +19,7 @@
 footer {
     padding-left: 1em;
 }
+input#name {
+  color: red;
+  font-size: 1.5em;
+}

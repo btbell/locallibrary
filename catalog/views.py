@@ -8,7 +8,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 import datetime
 
 from .models import Book, Author, BookInstance
-from catalog.forms import RenewBookForm
+from catalog.forms import RenewBookForm, ContactForm, ColorfulContactForm
+#from catalog.forms import ContactForm
 
 # Create your views here.
 
@@ -144,6 +145,7 @@ def renew_book_librarian(request, pk):
 class AuthorCreate(CreateView):
   model = Author
   fields = '__all__'
+  #initial = {"date_of_birth": " year-month-day"} # this was a hack - using instead of placeholder attribute
   # the initial is just an example that you can have a default value set
   #initial = {'date_of_death': '05/23/1947'}
 
@@ -154,3 +156,25 @@ class AuthorUpdate(UpdateView):
 class AuthorDelete(DeleteView):
   model = Author
   success_url = reverse_lazy('authors')
+
+#form_test
+# this is a test form from https://simpleisbetterthancomplex.com/article/2017/08/19/how-to-render-django-form-manually.html
+# on ways to modify form markup and styling
+def form_test(request):
+  if request.method == 'POST':
+    form = ContactForm(request.POST)
+    if form.is_valid():
+      pass  # does nothing, just trigger the validation
+  else:
+    form = ContactForm()
+  return render(request, 'catalog/form_test.html', {'form': form})
+
+#form_test - with custom attributes and CSS
+def form_test_colorful(request):
+  if request.method == 'POST':
+    form = ColorfulContactForm(request.POST)
+    if form.is_valid():
+      pass  # does nothing, just trigger the validation
+  else:
+    form = ColorfulContactForm()
+  return render(request, 'catalog/form_test_colorful.html', {'form': form})

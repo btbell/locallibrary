@@ -11,6 +11,7 @@ https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
         fixed value.
      https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Generic_views -- Challenge yourself
 
+    Actually go sidetracked learning how to edit Django form elements (see form_test and form_test_colorful)
 
     - left off here - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
