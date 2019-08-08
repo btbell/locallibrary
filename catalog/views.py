@@ -47,7 +47,7 @@ def index(request):
     'num_visits' : num_visits,
   }
 
-  # render the HTML template index.html with the data in the context variable
+  # render the HTML templates index.html with the data in the context variable
   return render(request, 'index.html', context=context)
 
 # generic class views
@@ -70,6 +70,11 @@ class AuthorDetailView(LoginRequiredMixin, generic.DetailView):
 
   context_object_name = 'author'
   queryset = Author.objects.all()
+
+  # get all of the books related to an author
+  context =  Author.objects.get(id=1).book_set.all()
+
+  #TODO define a method to pull all books of the author
 
   def get_context_data(self, **kwargs):
     # call the base implementation first to get a context

@@ -64,3 +64,15 @@ class ColorfulContactForm(forms.Form):
     widget=forms.Textarea(attrs={'style': 'border-color: orange;'}),
     help_text='Write here your message!'
   )
+
+# i'm testing add styles and attributes to Django form elements
+#class AltCreateAuthorForm(form.Form):
+ # first_name = forms.Charfield(
+ #   max_length=40,
+ #   widget=formsTextInput(
+ #     attrs={
+ #       'style': 'pink;',
+ #       'placeholder': 'Placeholder testing'
+ #     }
+ #   )
+ # )
